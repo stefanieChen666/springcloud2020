@@ -35,7 +35,7 @@ public class PaymentController {
     public CommonResult create(@RequestBody Payment payment){
        int result=paymentService.create(payment);
         if (result>0){
-            return new CommonResult(200,"插入数据成功,servepot"+serverPort,payment);
+            return new CommonResult(200,"插入数据成功,serveport"+serverPort,payment);
         }else{
             return new CommonResult(444,"插入数据失败",payment);
         }
@@ -44,7 +44,7 @@ public class PaymentController {
     public CommonResult getPaymentById(@PathVariable("id") Long id){
         Payment payment= paymentService.getPaymentById(id);
         if(payment != null){
-            return new CommonResult(200,"查询数据成功,servepot"+serverPort,payment);
+            return new CommonResult(200,"查询数据成功,serveport"+serverPort,payment);
         }else{
             return new CommonResult(444,"查询失败，查询id"+id);
         }
